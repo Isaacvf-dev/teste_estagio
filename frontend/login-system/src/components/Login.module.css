@@ -26,7 +26,6 @@ form h1 {
 
   display: flex;
   align-items: center;
-
 }
 
 .inputBox > input {
@@ -38,8 +37,21 @@ form h1 {
 }
 
 .icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.loading {
+  animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); 
+  }
+  to {
+    transform: rotate(360deg); 
+  }
 }
 
 .inputBox > input::placeholder {
@@ -81,6 +93,18 @@ form button {
   cursor: pointer;
   color: var(--purple-500);
   font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+form button:hover {
+  background: var(--purple-500);
+  color: var(--white);
+}
+
+form button:disabled {
+  color: var(--purple-500);
+  background: var(--white);
+  opacity: 0.7;
 }
 
 form .registerLink {
@@ -98,8 +122,27 @@ form .registerLink {
   text-decoration: underline;
 }
 
-.textRed {
+.errorMsg {
   color: var(--red-500);
-  margin-top: -0.8rem;
-  margin-left: .5rem;
+  margin-left: .5rem;  
 }
+
+.submitSucessfullMsg {
+  color : var(--green-300);
+  text-align: center;
+}
+
+.submitErrorMsg {
+  color: var(--red-500);
+  text-align: center;
+}
+
+.errorMsg, .submitSucessfullMsg, .submitErrorMsg {  
+  margin-top: -0.8rem;  
+  transition: opacity 0.4s ease;
+  font-size: 0.69rem;
+}
+.msgHidden {
+  opacity: 0;
+}
+
