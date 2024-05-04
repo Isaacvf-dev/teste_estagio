@@ -1,0 +1,29 @@
+:root {
+  --white: #fff;  
+  --gray-400: #8d8d99; 
+  --blue-300: #667eea;
+  --purple-500: #764ba2;
+  --red-500: #f3737e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(135deg, var(--blue-300) 0%, var(--purple-500) 100%);   
+}
+
+body, input, textarea, button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}

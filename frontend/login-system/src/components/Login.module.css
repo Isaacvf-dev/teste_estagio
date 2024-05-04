@@ -1,0 +1,105 @@
+.formBox {
+  width: 100%;
+  padding: 2rem;
+  font-size: 0.875rem;
+  box-sizing: border-box; 
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;  
+}
+
+form h1 {
+  font-size: 2.25rem;
+  text-align: center;
+}
+
+.inputBox {
+  width: 100%;
+  height: 3.125rem;  
+  padding: 0 0.8rem;
+  border-radius: 40px;
+  border: 2px solid rgba(255, 255, 255, .1);
+
+  display: flex;
+  align-items: center;
+
+}
+
+.inputBox > input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--white);
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.inputBox > input::placeholder {
+  color: var(--white);
+}
+
+
+.rememberForgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+
+.rememberForgot label {
+  display: flex;
+}
+
+.rememberForgot label input {
+  accent-color: var(--white);
+  margin-right: 4px;
+}
+
+.rememberForgot a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.rememberForgot a:hover {
+  text-decoration: underline;
+}
+
+form button {
+  width: 100%;
+  height: 2.8rem;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  color: var(--purple-500);
+  font-weight: 700;
+}
+
+form .registerLink {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.registerLink p a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.registerLink p a:hover {
+  text-decoration: underline;
+}
+
+.textRed {
+  color: var(--red-500);
+  margin-top: -0.8rem;
+  margin-left: .5rem;
+}
