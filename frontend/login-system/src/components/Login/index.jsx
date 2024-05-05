@@ -2,7 +2,8 @@ import {useForm} from 'react-hook-form'
 import styles from './Login.module.css'
 import { RiUser3Fill, RiLockFill  } from "react-icons/ri";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import userData from '../users.json'
+import userData from '../../users.json'
+import { Notification } from '../Notification/index';
 
 export const Login = () => {
   const { 
@@ -40,14 +41,21 @@ export const Login = () => {
       }           
     }
   }
-
   return (
     <main className={styles.formBox} id='login'>
       <form onSubmit={handleSubmit(onSubmit)}>
         <h1>Login</h1>
-
-        <div className={`${styles.submitSucessfullMsg} ${isSubmitSuccessful  ? '' : styles.msgHidden}`}>Login realizado com sucesso!</div>
-        <div className={`${styles.submitErrorMsg} ${errors.root ? '' : styles.msgHidden}`}>{errors.root?.message}</div> 
+        
+        <Notification 
+        variant='success' 
+        msg='Login realizado com sucesso!' 
+        hidden={!isSubmitSuccessful}
+        />
+        <Notification 
+          variant='fail' 
+          msg={errors.root?.message}
+          hidden={!errors.root}
+        />               
 
         <div className={styles.inputBox}>
           <input
@@ -64,7 +72,11 @@ export const Login = () => {
           <RiUser3Fill className={styles.icon}/>
         </div>
         
-        <div className={`${styles.errorMsg} ${errors.email ? '' : styles.msgHidden}`}>{errors.email?.message}</div>
+        <Notification 
+          variant='error'
+          msg={errors.email?.message}
+          hidden={!errors.email}
+        />        
         
         <div className={styles.inputBox}>
           <input
@@ -81,7 +93,11 @@ export const Login = () => {
           <RiLockFill className={styles.icon}/>
         </div>
         
-        <div className={`${styles.errorMsg} ${errors.password ? '' : styles.msgHidden}`}>{errors.password?.message}</div>
+        <Notification 
+          variant='error'
+          msg={errors.password?.message}
+          hidden={!errors.password}
+        />        
         
         <div className={styles.rememberForgot}>
           <label>

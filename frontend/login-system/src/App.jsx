@@ -1,4 +1,4 @@
-import { Login } from './components/Login';
+import { Login } from './components/Login/index';
 
 import './global.css';
 import styles from "./App.module.css"
